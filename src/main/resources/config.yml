@@ -1,0 +1,108 @@
+# +------------------------------------------------------+ #
+# |                 Jackpot (Configuration)              | #
+# +------------------------------------------------------+ #
+# If you have problems, join the Jackpot help support channel:
+# https://discord.gg/gFwVVTE
+# -----------------------------------------------------------
+# Use these placeholders to display information:
+# -
+# {amount} ---> Amount of tickets purchased.
+# {price} ---> Price for tickets purchased.
+# -
+# {timer} ---> Total time remaining till jackpot draw.
+# {total-value} ---> Total value of current jackpot.
+# {tax} ---> Jackpot tax percentage.
+# {total-tickets} ---> Total amount of jackpot tickets.
+# {player-tickets} ---> Number of jackpot tickets purchased by the player.
+# {player-percent} ---> The percentage change the player will win the draw.
+# -
+# {winner} ---> The player name of the current jackpot draw winner.
+# {prize} ---> The current jackpot draw prize.
+# -----------------------------------------------------------
+# IMPORTANT NOTES:
+#    > Wrap your text in '' (quotes) if using color codes.
+#    > All time values are in seconds.
+#    > A tax-percent value of 0.10 is a 10% tax.
+# -----------------------------------------------------------
+jackpot:
+  ticket-price: 10000
+  draw-time: 10800
+  tax-percent: 0.10
+  warnings:
+    - 3600
+    - 1800
+    - 600
+    - 60
+  confirm-gui: true
+title:
+  enable: true
+  title: "&b&l(!) --- JACKPOT RESULTS --- &b&l(!)"
+  subtitle: "&7Congratulation to &a{winner}&7 for winning &a${prize}&7 at the lottery!"
+messages:
+  buy-ticket: '&a&l(!) &aYou successfully purchased {amount} tickets for ${price}'
+  unknown-cmd: "&c&l(!) &c/jackpot help"
+  cannot-afford: '&c&l(!) &cYou cannot afford the total price of ${price} for {amount} tickets!'
+  no-perm: "&c&l(!) &cYou do not have permission to use that command!"
+  reloaded: "&a&l(!) &aJackpot successfully reloaded the config."
+  reset: "&a&l(!) &aThe plugin has been succesfully reset."
+  force-run: "&a&l(!) &aJackpot force ran succesfully!"
+  help:
+    - ''
+    - '&e&lJackpot Commands'
+    - ' &b&l/jackpot buy/bet/place <amount> &8&l- &eBuy Tickets'
+    - ' &b&l/jackpot reload &8&l- &eReload Plugin'
+    - ' &b&l/jackpot run &8&l- &eWithdraw Jackpot'
+    - ' &b&l/jackpot reset &8&l- &eReset Jackpot'
+    - ''
+  jackpot-info:
+    - ''
+    - '&e&lServer Jackpot'
+    - ' &b&lJackpot Value: &e${total-value} &7(-{tax}% tax)'
+    - ' &b&lTickets Sold: &e{total-tickets}'
+    - ' &b&lYour Tickets: &a{player-tickets} &7({player-percent}%)'
+    - ''
+    - '&b&l(!) &bNext Winner in &n{timer}&r'
+    - ''
+  jackpot-results:
+    - ''
+    - '            &b&l(!) --- JACKPOT RESULTS --- &b&l(!)'
+    - '   &7Congratulation to &a{winner}&7 for winning the lottery!'
+    - '    &7A prize of &a${prize}&7 has been added to their balance.'
+    - ''
+  jackpot-warning:
+    - ''
+    - '&b&l(!) &bServer Jackpot (${total-value}) drawing in &l{timer}&b!'
+    - '&7Use &e/jackpot buy &7to purchase a ticket!'
+    - ''
+  history-header:
+    - ''
+    - '&b&lWinner Name / Prize / Tickets / Total Tickets'
+    - ''
+  history-entry: '&e&l{winner} / {prize} / {player-tickets} / {total-tickets}'
+  history-footer:
+    - ''
+confirm-gui:
+  title: 'Confirm {amount} Tickets'
+  confirm-button:
+    material: 'LIME_STAINED_GLASS_PANE'
+    name: '&a&lConfirm Purchase'
+    lore:
+      - '&7Click to &aconfirm &7purchase of'
+      - '&a{amount} &7ticket(s) for &a${price}'
+  cancel-button:
+    material: 'RED_STAINED_GLASS_PANE'
+    name: '&c&lCancel Purchase'
+    lore:
+      - '&7Click to &ccancel &7purchase of'
+      - '&c{amount} &7ticket(s) for &c${price}'
+  center-button:
+    material: 'BOOK'
+    name: '&e&l(!) Confirm Your Purchase (!)'
+    lore:
+      - '&7Select whether you would like to'
+      - '&7confirm or cancel your ticket purchase.'
+  cancel-message: '&c&l(!) &cYou have canceled your ticket purchase!'
+storage:
+  jackpot-history:
+    - 'Player1:100000:100:28374'
+
