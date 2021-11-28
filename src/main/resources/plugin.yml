@@ -3,7 +3,7 @@ version: 2.0
 main: com.technovision.jackpot.Jackpot
 api-version: 1.8
 depend: [Vault]
-authors: [TechnoVision]
+authors: [TechnoVision, gush3l]
 commands:
   jackpot:
     description: View the current jackpot
